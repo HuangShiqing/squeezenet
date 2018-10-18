@@ -30,7 +30,7 @@ def _expand(inputs, num_outputs):
     with tf.variable_scope('expand'):
         e1x1 = conv2d(inputs, num_outputs, [1, 1], stride=1, scope='1x1')
         e3x3 = conv2d(inputs, num_outputs, [3, 3], scope='3x3')
-    return tf.concat([e1x1, e3x3], 1)
+    return tf.concat([e1x1, e3x3], -1)
 
 
 class Squeezenet(object):
